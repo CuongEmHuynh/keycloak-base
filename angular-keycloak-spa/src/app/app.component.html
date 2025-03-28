@@ -1,0 +1,10 @@
+<h1>Keycloak Angular Example</h1>
+
+<button *ngIf="isLoggedIn" type="button" (click)="logout()">Log out</button>
+<button *ngIf="!isLoggedIn" type="button" (click)="login()">Log in</button>
+<div *ngIf="isLoggedIn">
+  <h3>Thông tin user</h3>
+  <p> <span> Username: </span> <b>{{userProfile?.username}}</b> </p>
+  <p> <span> FirstName: </span> <b>{{userProfile?.firstName}}</b> </p>
+  <span> LastName: </span> <b>{{userProfile?.lastName}}</b>
+</div>
