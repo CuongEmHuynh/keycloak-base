@@ -4,6 +4,8 @@
 
 This project demonstrates how to integrate Keycloak authentication and authorization into an Angular frontend and a .NET API backend. Keycloak is an open-source identity and access management solution that provides authentication, authorization, and user management.
 
+This project is developed by **Huỳnh Cường Em**, and a detailed guide is available on Notion: [Keycloak Guide](https://www.notion.so/Keycloak-1c3b6bc7b65380d1a302fd6eaf50ce43?pvs=4).
+
 ## Tech Stack
 
 - **Frontend**: Angular 15+
