@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         options.Authority = keycloakSettings["Authority"];
         options.Audience = keycloakSettings["Audience"];
         options.RequireHttpsMetadata = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            //ValidAudiences = new[] { "master-realm", "account" },
+            ValidateIssuer = true,
+            ValidIssuer = keycloakSettings["Authority"],
+            ValidateLifetime = true,
+            RequireExpirationTime = true
+        };
     });
 
 var app = builder.Build();
